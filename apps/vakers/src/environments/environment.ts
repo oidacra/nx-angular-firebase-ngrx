@@ -7,13 +7,13 @@ export const environment = {
   firebase: {
     databaseURL: '<your-database-URL>',
 
-    apiKey: 'AIzaSyDWIW6Fx2UtGAAJ7F0sGnuI4VN2KkH2E9k',
-    authDomain: 'vaki-project-d00bd.firebaseapp.com',
-    projectId: 'vaki-project-d00bd',
-    storageBucket: 'vaki-project-d00bd.appspot.com',
-    messagingSenderId: '396441712272',
-    appId: '1:396441712272:web:fcf542a5efa6138ff3ca15',
-    measurementId: 'G-035HQNPEDN',
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+    measurementId: '',
   },
 };
 
