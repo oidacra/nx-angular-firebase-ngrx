@@ -5,7 +5,6 @@ import { Observable } from 'rxjs/internal/Observable';
 export class AvailableValidators {
   constructor(private http: HttpClient) {}
   static available(item: string): ValidatorFn {
-    console.log(item);
     return (control: AbstractControl): { [key: string]: any } | null =>
       control.value?.toLowerCase() === item
         ? null

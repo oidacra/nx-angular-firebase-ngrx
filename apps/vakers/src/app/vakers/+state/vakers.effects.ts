@@ -39,7 +39,7 @@ export class VakersEffects {
     this.actions$.pipe(
       // Filters by Action Creator 'login'
       ofType(VakersActions.loadRecompensas),
-      tap((action) => console.log(action)),
+
       switchMap((action) =>
         this.vakisService.getRecompensasByVaki(action.id).pipe(
           map(

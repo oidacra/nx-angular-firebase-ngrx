@@ -24,7 +24,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.route.params.subscribe((params) => {
       const id = params['slug'];
-      console.log(id);
+
       this.store.dispatch(loadRecompensas({ id }));
     });
   }
