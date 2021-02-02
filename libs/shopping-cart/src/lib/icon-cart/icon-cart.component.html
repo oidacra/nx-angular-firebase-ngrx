@@ -1,0 +1,10 @@
+<ng-container *ngIf="qty >= 1; else noBadge">
+  <mat-icon (click)="goToCartButton()" [matBadge]="qty" matBadgeColor="warn"
+    >shopping_cart</mat-icon
+  >
+</ng-container>
+<ng-template #noBadge>
+  <mat-icon (click)="goToCartButton()" matBadgeColor="warn"
+    >shopping_cart</mat-icon
+  >
+</ng-template>

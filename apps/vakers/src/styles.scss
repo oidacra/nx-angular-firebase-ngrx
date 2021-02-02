@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@import './theme.scss';
+
+@include mat-core();
+
+$my-custom-primary: mat-palette($mat-vaki-theme-primary);
+$my-custom-accent: mat-palette($mat-vaki-theme-accent, 100, 500, A100);
+$my-custom-warn: mat-palette($vaki-mat-warn);
+
+$my-custom-theme: mat-light-theme(
+  $my-custom-primary,
+  $my-custom-accent,
+  $my-custom-warn
+);
+
+@include angular-material-theme($my-custom-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

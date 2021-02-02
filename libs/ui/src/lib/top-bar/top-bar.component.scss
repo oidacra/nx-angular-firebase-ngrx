@@ -1,0 +1,31 @@
+@import '../../../../../apps/vakers/src/theme.scss';
+
+:host {
+  width: 100%;
+  z-index: 102;
+  display: flex;
+
+  mat-toolbar {
+    background-color: map-get($vaki-black, 100) !important;
+    color: $vaki-white !important;
+    .toolbar-logo {
+      margin-left: 36px;
+      margin-right: 36px;
+      img {
+        height: 36px;
+      }
+    }
+    &.elevation-z3 {
+      box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+        0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    }
+    .lola {
+      width: 50px;
+      height: auto;
+    }
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

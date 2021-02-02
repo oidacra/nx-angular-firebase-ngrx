@@ -1,0 +1,64 @@
+<h1>Recompensas en tu carrito de compras</h1>
+<ng-container *ngIf="_recompensas.length > 0; else noItems">
+  <form [formGroup]="recompensasForm">
+    <table
+      mat-table
+      formArrayName="recompensas"
+      [dataSource]="_recompensas"
+      class="mat-elevation-z8"
+    >
+      <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{ element.titulo }}</td>
+        <td mat-footer-cell *matFooterCellDef>Total</td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef>Precio</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.precio | currency }}
+        </td>
+        <td mat-footer-cell *matFooterCellDef>{{ totalOrden | currency }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="qty">
+        <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+        <td
+          mat-cell
+          *matCellDef="let element; let rowIndex = index"
+          [formGroupName]="rowIndex"
+        >
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              autocomplete="off"
+              [value]="element.qty"
+              formControlName="qty"
+              type="number"
+            />
+          </mat-form-field>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+    </table>
+  </form>
+  <button
+    style="margin-top: 20px"
+    mat-flat-button
+    color="primary"
+    [disabled]="recompensasForm.invalid"
+    (click)="checkoutPage('')"
+  >
+    PAGAR
+  </button>
+</ng-container>
+<ng-template #noItems
+  >No tienes ningun item en tu carrito de compra.</ng-template
+>

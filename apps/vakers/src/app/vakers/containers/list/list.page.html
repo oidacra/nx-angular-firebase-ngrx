@@ -1,0 +1,13 @@
+<div
+  fxLayoutGap="20px"
+  class="vakis-listado-container"
+  *ngIf="vakis$ | async as vakis"
+>
+  <ng-container *ngFor="let vaki of vakis;">
+    <vaki-challenge-vaki-card
+      [vaki]="vaki"
+      fxFlex="25"
+      (selectedId)="selectedVaki($event)"
+    ></vaki-challenge-vaki-card>
+  </ng-container>
+</div>

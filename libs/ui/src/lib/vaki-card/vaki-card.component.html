@@ -1,0 +1,25 @@
+<mat-card class="container-cards">
+  <mat-card-header>
+    <mat-card-title>{{ vaki.name }}</mat-card-title>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content>
+    <p>
+      {{ vaki.summary }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      fxFlex
+      (click)="selectVaki(vaki.id)"
+      mat-flat-button
+      color="primary"
+    >
+      Var más
+    </button>
+  </mat-card-actions>
+</mat-card>

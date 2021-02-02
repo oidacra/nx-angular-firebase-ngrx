@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vaki-project-d00bd": {
+      "hosting": {
+        "vakers": [
+          "vaki-project-d00bd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vaki-project-d00bd"
+  }
+}

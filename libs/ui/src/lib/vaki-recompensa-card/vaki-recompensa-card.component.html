@@ -1,0 +1,43 @@
+<div
+  fxLayoutGap="20px"
+  fxLayout="row wrap"
+  class="vakis-recompensas-container"
+  style="margin-right: -20px"
+>
+  <ng-container *ngIf="!isLoading; else loading">
+    <ng-container *ngIf="recompensas.length > 0; else noItems">
+      <ng-container *ngFor="let recompensa of recompensas">
+        <div class="inner-container" fxFlex="calc(33%-20px)">
+          <mat-card [class.agotado]="recompensa.existencias <= 0">
+            <mat-card-header>
+              <mat-card-title fxFlex>{{ recompensa.titulo }} </mat-card-title>
+              <div fxFlex class="header-image">
+                <img src="assets/backpack.png" />
+              </div>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                {{ recompensa.descripcion }}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button
+                color="primary"
+                [disabled]="recompensa.existencias < 1"
+                (click)="addToCart(recompensa)"
+                fxFlex
+                mat-stroked-button
+              >
+                {{ recompensa.precio | currency }}
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </ng-container>
+      <span class="cdk-visually-hidden"></span>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #loading> Cargando...</ng-template>
+  <ng-template #noItems> Sin items para mostrar</ng-template>
+</div>

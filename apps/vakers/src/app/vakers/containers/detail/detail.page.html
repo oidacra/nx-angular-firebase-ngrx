@@ -1,0 +1,12 @@
+<div class="detail-vaki-container" fxLayoutGap="20px" fxLayout="column">
+  <vaki-challenge-vaki-card-detail
+    [vaki]="selectdVaki$ |async"
+  ></vaki-challenge-vaki-card-detail>
+  <h2>Recompensas:</h2>
+
+  <vaki-challenge-vaki-recompensa-card
+    [recompensas]="recompensas$ | async"
+    [isLoading]="recompensaIsLoading$ | async"
+    (addCart)="addCart($event)"
+  ></vaki-challenge-vaki-recompensa-card>
+</div>

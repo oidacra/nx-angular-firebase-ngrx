@@ -1,0 +1,48 @@
+<mat-toolbar class="elevation-z3">
+  <button
+    (click)="toggleSidebarBtn()"
+    mat-icon-button
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a class="toolbar-logo" routerLink="/">
+    <img src="assets/vaki-logo-white&green.svg" alt="Vaki Logo" />
+  </a>
+
+  <button mat-button routerLink="/vaki/list">EXPLORAR</button>
+  <button mat-button>CREAR</button>
+  <button mat-button>APRENDER</button>
+
+  <span class="example-spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="matMenuCurrencies">
+    {{ selectedCurrency | uppercase }} <mat-icon>expand_more</mat-icon>
+  </button>
+  <mat-menu #matMenuCurrencies="matMenu">
+    <button
+      mat-menu-item
+      *ngFor="let currency of optionsCurrencies"
+      (click)="changeCurrency(currency.value)"
+    >
+      {{ currency.label }}
+    </button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    {{ selectedLenguage | uppercase }} <mat-icon>expand_more</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="changeLanguage('es')">ES</button>
+    <button mat-menu-item (click)="changeLanguage('en')">EN</button>
+  </mat-menu>
+
+  <vaki-challenge-icon-cart
+    [qty]="qtycart"
+    (goToCart)="goToCartEvent()"
+  ></vaki-challenge-icon-cart>
+
+  <button mat-button>INGRESA</button>
+  <img class="lola" src="assets/lola-icon.gif" alt="lola" />
+</mat-toolbar>

@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  .vakis-recompensas-container {
+    .inner-container {
+      margin-bottom: 20px;
+      .mat-card-header-text {
+        margin: 0;
+      }
+    }
+    mat-card-header {
+      .mat-card-header-text {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+:host ::ng-deep .mat-card {
+  &.agotado {
+    background-color: #e6e6e6;
+  }
+  .mat-card-header-text {
+    margin: 0 !important;
+  }
+  .header-image {
+    text-align: right;
+    img {
+      max-width: 100px;
+    }
+  }
+}

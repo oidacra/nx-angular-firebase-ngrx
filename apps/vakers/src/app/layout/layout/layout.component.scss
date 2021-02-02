@@ -1,0 +1,16 @@
+@import '../../../theme.scss';
+:host {
+  display: block;
+  height: 100%;
+  .navbar-container {
+    z-index: 100;
+    background-color: map-get($vaki-black, 100);
+    padding-left: 10px;
+    height: 64px;
+    h1 {
+      font-size: 1rem;
+      color: $vaki-white;
+      margin: 0;
+    }
+  }
+}

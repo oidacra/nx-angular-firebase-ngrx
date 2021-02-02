@@ -1,0 +1,26 @@
+@import '../../../../../apps/vakers/src/theme.scss';
+:host {
+  display: block;
+  height: 100%;
+  .mat-drawer {
+    background-color: map-get($vaki-black, 100) !important;
+    color: $vaki-white !important;
+    .mat-icon,
+    .mat-list-item {
+      color: $vaki-white;
+    }
+  }
+
+  mat-drawer-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .sidenav-content {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

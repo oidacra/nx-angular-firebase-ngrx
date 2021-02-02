@@ -1,0 +1,30 @@
+{
+  "npmScope": "vaki-challenge",
+  "affected": { "defaultBase": "master" },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "accessToken": "N2YzNDViMDEtZWE2Mi00ZGM0LWJkMGQtNzg2N2YwNThmYmU3fHJlYWQtd3JpdGU=",
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "projects": {
+    "vakers": { "tags": [] },
+    "vakers-e2e": { "tags": [], "implicitDependencies": ["vakers"] },
+    "ui": { "tags": [] },
+    "interfaces": { "tags": [] },
+    "shopping-cart": { "tags": [] }
+  }
+}

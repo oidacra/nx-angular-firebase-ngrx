@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@vaki-challenge/ui": ["libs/ui/src/index.ts"],
+      "@vaki-challenge/interfaces": ["libs/interfaces/src/index.ts"],
+      "@vaki-challenge/shopping-cart": ["libs/shopping-cart/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

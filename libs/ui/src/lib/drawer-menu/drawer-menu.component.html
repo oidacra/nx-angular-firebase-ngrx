@@ -1,0 +1,41 @@
+<mat-drawer-container
+  class="container mat-typography"
+  fxFlexFill
+  autosize
+  [hasBackdrop]="'false'"
+>
+  <mat-drawer
+    #drawer
+    mode="side"
+    opened="true"
+    [class.opened-sidebar]="isOpenSidebar"
+  >
+    <mat-nav-list>
+      <mat-list-item routerLink="/">
+        <mat-icon mat-list-icon>explore</mat-icon>
+        <h4 mat-line *ngIf="isOpenSidebar">Explorar</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>create</mat-icon>
+        <h4 mat-line *ngIf="isOpenSidebar">Crear</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>school</mat-icon>
+        <h4 mat-line *ngIf="isOpenSidebar">Aprender</h4>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="sidenav-content">
+      <div
+        class="inner-container"
+        fxFlex="95%"
+        fxFlex.gt-md="80%"
+        fxFlex.lg-md="70%"
+      >
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

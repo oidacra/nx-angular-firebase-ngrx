@@ -1,0 +1,84 @@
+@import '../../../../../apps/vakers/src/theme.scss';
+
+:host {
+  display: block;
+  .detail-card {
+    border-radius: 4px;
+    padding: 0;
+
+    .mat-card-image {
+      margin: 0;
+      height: 100%;
+    }
+
+    .detail-card-content {
+      display: flex;
+      justify-content: space-between;
+
+      & > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        max-width: 60%;
+
+        &:first-child {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+
+        &:last-child {
+          flex-direction: column;
+          align-items: start;
+          padding: 20px;
+        }
+      }
+      .vaki-info {
+        h1 {
+          font-size: 2rem;
+          font-weight: 400;
+          margin-bottom: 10px;
+        }
+        a {
+          margin-bottom: 20px;
+          color: map-get($vaki-primary, 100);
+          font-weight: 600;
+        }
+        .legends {
+          width: 100%;
+          margin-top: 3px;
+          margin-bottom: 3px;
+
+          &.small {
+            font-size: 0.8rem !important;
+            color: map-get($vaki-black, 60);
+          }
+          &.bold {
+            font-size: 0.8rem !important;
+            color: map-get($vaki-black, 80);
+            font-weight: 800;
+          }
+          &.stats {
+            color: map-get($vaki-primary, 100);
+            font-size: 1rem !important;
+            font-weight: 800;
+            padding-left: 10px;
+            margin-top: 15px;
+            mat-icon {
+              margin-right: 2px;
+            }
+            span {
+              font-weight: 400;
+              font-size: 0.8rem !important;
+              color: map-get($vaki-black, 60);
+            }
+          }
+
+          .button-fix {
+            margin-top: 3.5px !important;
+          }
+        }
+      }
+    }
+  }
+}

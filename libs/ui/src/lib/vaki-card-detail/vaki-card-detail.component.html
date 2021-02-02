@@ -1,0 +1,65 @@
+<mat-card class="detail-card">
+  <mat-card-content class="detail-card-content">
+    <img mat-card-image src="assets/vaki-demo.png" alt="" />
+    <div class="vaki-info" fxLayout="column" fxLayoutAlign="start none">
+      <h1>{{ vaki.name }}</h1>
+      <a href="#">Ver info</a>
+      <div
+        class="legends small"
+        fxLayout="row"
+        fxLayoutAlign="space-between none"
+      >
+        <span>15 días antes del cierre Oct, 4 2019</span>
+        <span>47% de la meta</span>
+      </div>
+      <mat-progress-bar mode="determinate" value="47"></mat-progress-bar>
+      <div
+        class="legends bold"
+        fxLayout="row"
+        fxLayoutAlign="space-between none"
+      >
+        <span>Meta:</span>
+        <span>COP$300.000.000</span>
+      </div>
+      <div
+        class="legends stats"
+        fxLayout="row"
+        fxLayoutAlign="space-between none"
+      >
+        <div fxLayout="row" fxFlex="50" class="stats-vaki">
+          <mat-icon aria-hidden="false">trending_up</mat-icon>
+          <p fxLayout="column">COP$ 995,875,000 <span>Recaudado</span></p>
+        </div>
+        <div fxLayout="row" fxFlex class="green-vaki">
+          <mat-icon aria-hidden="false">star</mat-icon>
+          <p fxLayout="column">1,235 <span>Vakers</span></p>
+        </div>
+      </div>
+      <div>
+        <form fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field appearance="outline" fxFlex="20">
+            <mat-select>
+              <mat-option
+                *ngFor="let currency of optionsCurrencies"
+                [value]="currency.value"
+              >
+                {{ currency.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <input matInput value="Sushi" />
+          </mat-form-field>
+          <div class="button-fix" fxFlex="30">
+            <button mat-raised-button color="primary">Aportar</button>
+          </div>
+        </form>
+        <button mat-raised-button color="primary">VER RECOMPENSAS</button>
+      </div>
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip>One fish</mat-chip>
+        <mat-chip>Two fish</mat-chip>
+      </mat-chip-list>
+    </div>
+  </mat-card-content>
+</mat-card>
